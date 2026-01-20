@@ -1,0 +1,111 @@
+// function greaterNum (a,b,c){
+//     if(a>b && a>c)
+//         return a
+//     else if(b>a && b>c)
+//         return b
+//     else
+//         return c;
+// }
+// let abc = greaterNum(1,2,3);
+// console.log(abc)
+// let totalAmount = 0;
+// function taskAdd(amt)
+// totalAmount =  totalAmount + amt
+
+// function dis()
+//     return totalAmount / 20
+
+//-------------------------------------------------------------------------------------------
+// taskAdd(500)
+// console.log(dis())
+
+// smart Logged in status
+// let isLoggedIn = true;
+// let isProfileComplete = false;
+
+// function check (){
+//     if(!isLoggedIn)
+//  return "please Login"
+// else if(!isProfileComplete)
+//     return "complete ypur profile"
+// else
+//     return "welcome back!"
+// }
+ 
+// let msg = check();
+// console.log(msg);
+//-------------------------------------------------------------------------------------------
+// // course price Tag
+// let price = 1200
+ 
+// function checkPrice(){
+//     if(price < 500)
+//         return "bidget Course"
+//     else if(price > 500 && price <100)
+//         return "standard course"
+//     else if(price > 1000)
+//         return "premium course"
+// }
+// let tag = checkPrice();
+// console.log(tag);
+
+//array (ordered/cokkection)
+// let arr =[10,20,30,40]
+// let sum = INT_MAx;
+// for(let v of arr){
+    
+// }
+// console.log(sum)
+//-------------------------------------------------------------------------------------------
+// write a function thar recevies marks array as argument and returns small element
+
+// marks = [20,40,56,78,20]
+// let min = marks[0]
+// function check_min(a){
+//     for(let m of a){
+//         if(min>m)
+//             min = m
+//     }
+//     return min;
+// } 
+
+// let res = check_min(marks);
+// console.log(res);
+
+//-------------------------------------------------------------------------------------------
+// // check wheather the skill is present or not in skilArr
+// for of loop is used to iterate over elements
+// let skillArr = ['java','c','c++','python']
+// function findSkill(skillArr1,skill){
+//     for(let v  of skillArr1){
+//         if(v === skill){
+//             return true;
+//         }
+//     }
+//     return false
+// }
+// let res = findSkill(skillArr,'java')
+// console.log(res);
+//-------------------------------------------------------------------------------------------
+// object group of properties
+// for in loop iterate over keys
+// let empObj = {
+//     empNo:100,
+//     name:'ram',
+//     age:89,
+// }
+// for(let i in empObj){
+//     console.log(i, "is",empObj[i])
+// }
+
+let stuObj={
+    rollNo : 10,
+    name :'charan',
+    city : 'hyd',
+}
+
+let proObj={
+    proName : 'pen',
+    brand : 'cello',
+    price : 100,
+}
