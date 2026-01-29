@@ -144,8 +144,7 @@ console.log(res4)
 const keyboardIndex = cart.findIndex(item => item.name === "Keyboard");
 console.log("Keyboard Index:", keyboardIndex);
 
-
-//-------------------------------------------------------------------------------------------
+-
 // ASSIGNMENT 2:
 // -------------
 // Student Performance Dashboard
