@@ -1,0 +1,259 @@
+// // Assignment 1: Date Creation & Extraction (Beginner)
+// // ---------------------------------------------------
+
+// let date1 = new Date()
+// // Date
+// console.log(date1.getDate())
+// //  Year
+// console.log(date1.getFullYear())
+// // Day of the week
+// console.log(date1.getDay())
+// // hours
+// console.log(date1.getHours());
+// // minutes
+// console.log(date1.getMinutes())
+// //seconds
+// console.log(date1.getSeconds())
+
+// //       3. Display the date in this format:
+// //                     DD-MM-YYYY HH:mm:ss
+
+// console.log(date1)
+
+
+
+// // Assignment 2: Date Comparison & Validation (Beginner → Intermediate)
+// // --------------------------------------------------------------------
+
+// //  Given:
+ 
+// //  Tas1ks:
+
+
+
+// let enrollmentDeadline = new Date("2026-01-20");
+// let date2 = new Date()
+// //  .Check if:
+// //  * Today is before deadline → "Enrollment Open"
+// //  * Today is after deadline → "Enrollment Closed"
+// if( date2 < enrollmentDeadline)
+//         console.log("Enrollment Open")
+//     if(date2 > enrollmentDeadline)
+//         console.log("Enrollment Closed")
+    
+//     //  2. Validate user input date:
+//     //  * Input: "2026-02-30"
+//     //  * Detect whether the date is valid or invalid
+// function validateDate(dateString) { 
+//     const date = new Date(dateString); 
+//     return !isNaN(date) && date.toISOString().slice(0, 10) === dateString;
+// }
+
+// let res = validateDate("2026-02-30")
+// console.log(res)
+
+
+// // Assignment 3: Age Calculator (Intermediate)
+// // -------------------------------------------
+// // Input:
+//     let dob = "2000-05-15";
+//     let date4 = new Date(dob)
+
+// // Tasks:
+// //         1. Calculate exact age in years
+
+// let date3 = new Date();
+// let age = date3.getFullYear() - date4.getFullYear();
+// console.log(age)
+
+
+
+// // Hands-On 1: Shallow Copy (Controlled Mutation Use Case)
+// // -------------------------------------------------------
+// // 🧪 Given Data:
+
+// // 🎯 Task
+// // iv. Observe what changes and what doesn’t
+
+// const user = {
+//     id: 101,
+//     name: "Ravi",
+//     preferences: {
+//         theme: "dark",
+//         language: "en"
+//     }
+// };
+
+// // 1. Create a shallow copy of user
+// let userCopy ={...user}
+
+
+// // 2. Change:
+// // i. name in the copied object
+
+// userCopy.name = 'Ramu';
+// // ii. preferences.theme in the copied object
+// userCopy.preferences.theme = 'light'
+
+// // iii .Log both original and copied objects
+// console.log("user:",user)
+// console.log("userCopy: ",userCopy)
+
+
+// // Hands-On 2: Deep Copy (Isolation & Safety Use Case)
+// // ---------------------------------------------------
+
+// // 🧪 Given Data:
+
+// // 🎯 Task:
+// // 2. Modify in copied object:
+// // ii. items[0].price
+// // iii. Verify original object remains unchanged
+
+
+// const order = {
+//     orderId: "ORD1001",
+//     customer: {
+//         name: "Anita",
+//         address: {
+//             city: "Hyderabad",
+//             pincode: 500085
+//         }
+//     },
+//     items: [
+//         { product: "Laptop", price: 70000 }
+//     ]
+// };
+
+// // 1. Create a deep copy of order
+// let orderCopy = structuredClone(order);
+
+// // i. customer.address.city
+// orderCopy.customer.address.city = 'Mumbai'
+// orderCopy.items[0].price = 80000
+
+// console.log("order :", order)
+// console.log("orderCopy:", orderCopy)
+
+// Project story:
+// -------------
+// “We are building the data engine of an online learning platform(like Udemy / Coursera / company LMS).Frontend and backend will later consume THIS logic.”
+
+// Data setup:
+// -----------
+
+
+// TASKS
+// ------
+
+
+
+//   MODULE 4: ROLE & PERMISSION ENGINE
+//   -> Get all role names
+//   -> Check if student can delete
+//   -> Create a flat list of all unique permissions
+//   -> Add new role moderator immutably
+
+
+
+
+const roles = {
+    admin: ["create", "update", "delete", "view"],
+    student: ["view"]
+};
+
+
+// MODULE-1 :USER PROCESSING ENGINE
+// -> Get only active users
+// -> Extract names of active users
+//   -> Check if any admin exists
+//   -> Find user by id
+//   -> Deactivate a user immutably
+
+// const users = [
+    //     { id: 1, name: "Ravi", role: "student", active: true },
+    //     { id: 2, name: "Anil", role: "admin", active: true },
+    //     { id: 3, name: "Suman", role: "student", active: false }
+    // ];
+    // let activeUsers = users.filter((ele) => {
+        //     ele.active = true;
+        //     return ele;
+        // }
+        // )
+        //  console.log(activeUsers)
+        // // Extract names of active users
+        // const activeUserNames = activeUsers.map(u => u.name);
+        // console.log(activeUserNames);
+        
+        
+        // let findAdmin = users.find((ele) => ele.role === 'admin' )
+        // console.log(findAdmin)
+        
+        // let findID = function(id){
+            //     return users.find((u) => u.id === id);
+            // }
+            // console.log(findID(2))
+            
+            
+            
+            
+            
+            
+            
+            //   MODULE 2: COURSE CATALOG ENGINE
+            //   -> Sort courses by price (high → low)
+            
+            const courses = [
+                { id: 101, title: "JavaScript", price: 999, published: true },
+                { id: 102, title: "React", price: 1499, published: false },
+                { id: 103, title: "Node", price: 1299, published: true }
+            ];
+            
+            
+            //   -> Get published courses
+            let publishedCourses = courses.filter((ele) => ele.id)
+            
+            console.log(publishedCourses)
+            
+            //   -> Extract { title, price } only
+            let titlePrice = courses.map((ele)=>({
+                title : ele.title,
+                price : ele.price
+            }))
+            
+            console.log(titlePrice)
+            
+            //   -> Calculate total value of published courses
+            let totalValue = courses.reduce((acc,ele)=> ele.price+acc,0)
+            console.log(totalValue)
+            
+            //   -> Add a new course immutably
+            function addItem(id,title,price,published){
+                let newItem = {
+                    id,
+                    title,
+                    price,
+                    published
+                }
+    
+    courses.push(newItem);
+}
+
+addItem(104,'helloworld',4567,true);
+
+console .log(courses)
+
+// MODULE 3: SHOPPING CART ENGINE 
+//   -> Merge cart with courses to get full course info
+//   -> Calculate total cart amount
+//   -> Increase quantity of a course (immutably)
+//   -> Remove a course from cart
+//   -> Check if all cart items are paid courses
+
+
+const cart = [
+    { courseId: 101, qty: 1 },
+    { courseId: 103, qty: 2 }
+];
+
+    
