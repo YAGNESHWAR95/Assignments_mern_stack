@@ -1,0 +1,60 @@
+# ### Read all users
+# GEt http://localhost:4000/user-api/users
+
+
+# ###
+# GET http://localhost:4000/user-api/users/697dbdf899ca2364c90e6f00
+
+# ### Create User
+# POST http://localhost:4000/user-api/users
+# Content-Type: application/json
+
+# {
+#     "username":"yagnesh",
+#     "password":"hello123",
+#     "age":19
+# }
+
+# ### Create User
+# PUT http://localhost:4000/user-api/users/697dbdf899ca2364c90e6f00
+# Content-Type: application/json
+
+# {
+#     "username":"yagnesh",
+#     "password":"hello123",
+#     "age":25
+# }
+
+# ###
+# DELETE http://localhost:4000/user-api/users/697dbdf899ca2364c90e6f00
+
+
+
+//products
+
+###
+GET http://localhost:4000/products-api/products
+
+###
+POST http://localhost:4000/products-api/products
+Content-Type: application/json
+
+{
+    "productid":100,
+    "productname" : "pen",
+    "price":"89000"
+}
+
+
+###
+GET http://localhost:4000/products-api/products/697dd57abaebde12b1ca4fb8
+
+###
+PUT http://localhost:4000/products-api/products/697dd57abaebde12b1ca4fb8
+Content-Type: application/json
+
+{
+    "productid":100,
+    "productname" : "pencil",
+    "price":"89000"
+}
