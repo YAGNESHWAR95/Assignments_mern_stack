@@ -9,28 +9,34 @@ usersApp.get('/user',(req,res) =>{
 })
 
 usersApp.post('/users',async(req,res) =>{
+  try{
           //get the user
           let newUser = req.body;
           //create a user doc 
           let newUserDoc = new UserModel(newUser)
           // run mongoose validation before hashing
-          if(!newUserDoc.validate()){
-            return res.status(400).json({message:"user ia not validated"})
-          }
+          await newUserDoc.validate()
           // hash the user password
           let hashedPassword = await hash(newUser.password,12)
           //replace the plain text with hashes password
-          newUser.password = hashedPassword;
+          newUserDoc.password = hashedPassword;
           //save the userDoc
-          await newUserDoc.save();
+
           // validation before checking
-          await newUserDoc.save({ validateBeforeSave : false})
+          await newUserDoc.save({validateBeforeSave})
 
           //send res
-          res.status(200).json({message:"new user is created",payload:newUserDoc})
+          res.status(200).json({message:"new user is created",payload:newUserDoc});
+  }
+ catch(err){
+            if(err === "ValidationError"){
+              return res.status(200).json({message: err.message})
+            }
+            res.status(500).json({message:"server error"})
+          }
 
 
-        })
+        });
 
 
 //updating user cart

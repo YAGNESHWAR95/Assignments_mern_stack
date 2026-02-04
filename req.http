@@ -21,7 +21,7 @@ Content-Type: application/json
 
 {
     "name":"rahul",
-    "email":"rahul1@gmail.com",
+    "email":"raju12@gmail.com",
     "password":"hello124",
     "cart":[]
 }
