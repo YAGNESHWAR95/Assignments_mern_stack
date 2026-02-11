@@ -1,0 +1,132 @@
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "firstName":"hari",
+    "lastName":"",
+    "email":"hari1@gmail.com",
+    "password":"hello123",
+    "profileImageUrl":""
+}
+
+### User login
+POST http://localhost:4000/user-api/authenticate
+Content-Type: application/json
+
+{
+    "email":"hari1@gmail.com",
+    "password":"hello123",
+    "role":"USER"
+}
+
+### Author registration
+POST http://localhost:4000/author-api/users
+Content-Type: application/json
+
+{
+    "firstName":"harrypotter",
+    "lastName":"",
+    "email":"harrypotter@gmail.com",
+    "password":"hello123",
+    "profileImageUrl":""
+}
+
+### Author authentication
+POST http://localhost:4000/author-api/authenticate
+Content-Type: application/json
+
+{
+    "email":"harrypotter@gmail.com",
+    "password":"hello123",
+    "role":"AUTHOR"
+}
+
+
+### Create article (AUTHOR)
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+  "author":"6989e59b241e57dee98f424f",
+  "title":"test1 article",
+  "category":"programming with js",
+  "content":"content of test1 article"
+}
+
+###Read articles of a author
+GET http://localhost:4000/author-api/articles/6989e59b241e57dee98f424f
+
+### Update article (AUTHOR)
+PUT http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+  "author":"6989e59b241e57dee98f424f",
+  "articleId":"6989ea628f9478564fba4d34",
+  "title":"test2 article updated",
+  "category":"programming",
+  "content":"content of test2 article updated"
+}
+
+### Delete Article
+DELETE http://localhost:4000/author-api/article 
+Content-Type: application/json
+
+{
+    "author":"6989e59b241e57dee98f424f",
+  "articleId":"6989ea628f9478564fba4d34"
+}
+
+### read all articles by user
+GET http://localhost:4000/user-api/articles/6989dc745d1d2a9e6887118a
+
+### comments
+
+PUT http://localhost:4000/user-api/comments
+Content-Type: application/json
+
+{
+    "user":"6989dc745d1d2a9e6887118a",
+  "articleId":"6989ef2376f69f622d274879",
+  "comment":"comment is updated"
+}
+
+### logout
+GET http://localhost:4000/common-api/logout
+
+### user atenticate
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+   "email":"admin@gmail.com",
+    "password":"hello123"
+}
+
+### test
+POST http://localhost:4000/admin-api/authenticate
+Content-Type: application/json
+
+{
+     "email":"admin@gmail.com",
+    "password":"hello123",
+    "role":"ADMIN"
+}
+#### read articles by abmin
+GET http://localhost:4000/admin-api/articles/698ac0ea858eb9ecda1cdaf3
+
+### block user
+GET http://localhost:4000/admin-api/block/698ac0ea858eb9ecda1cdaf3/6989dc745d1d2a9e6887118a
+
+### unblock user
+GET http://localhost:4000/admin-api/unblock/698ac0ea858eb9ecda1cdaf3/6989dc745d1d2a9e6887118a
+
+### Update password
+POST http://localhost:4000/common-api/updatepassword
+Content-Type: application/json
+
+{
+   "email":"hari1@gmail.com",
+    "password":"hello123",
+    "changedPassword":"hi123"
+}
