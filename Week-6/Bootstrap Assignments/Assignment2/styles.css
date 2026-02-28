@@ -1,0 +1,75 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Segoe UI;
+    background-color: #e4d8d8;
+}
+
+nav {
+    background-color: white;
+    padding:  20px 80px;
+}
+
+nav h3 {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+main {
+    background-color: #ff0000;
+    display: flex;
+    flex-wrap: wrap; 
+    padding: 75px 30px;
+}
+
+.down {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 80px;
+}
+
+.down h1 {
+    font-size: 60px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.down p {
+    color: white;
+    font-size: 20px;
+    max-width: 500px;
+    line-height: 1.4;
+}
+
+.con {
+    display: flex;
+    background-color: #310d0d; 
+}
+
+.child {
+    flex: 1;
+    padding: 3rem;
+    border-right: 1px solid red;
+}
+
+.child:last-child {
+    border-right: none;
+}
+
+.text {
+    color: white;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.lead-text-secondary {
+    color: #b0b0b0; 
+    line-height: 1.6;
+    font-size: 15px;
+}
